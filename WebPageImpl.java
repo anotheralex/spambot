@@ -1,13 +1,26 @@
+import java.net.*;
+import java.io.*;
+
 /**
 * A possible interface representing a web page.
 * This is only a suggestion.
 */
-public interface WebPage {
+public class WebPageImpl implements WebPage {
+
+	private String urlstr;
+	private URL url;
+
+	public WebPageImpl(String urlstr) {
+		this.urlstr = urlstr;
+	}
+
 	/**
 	* Returns the URL that identifies this web page.
 	* @return the URL that identifies this web page.
 	*/
-	String getUrl();
+	public String getUrl() {
+		return this.urlstr;
+	}
 
 	/**
 	* Returns all the links on this webpage.

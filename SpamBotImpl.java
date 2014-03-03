@@ -1,7 +1,7 @@
 /**
 * A spambot
 */
-public interface SpamBot {
+public class SpamBotImpl implements SpamBot {
 	/**
 	* Sets the seed.
 	*
