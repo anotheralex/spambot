@@ -1,3 +1,5 @@
+import java.util.Set;
+
 /**
 * A possible interface representing a web page.
 * This is only a suggestion.
