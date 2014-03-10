@@ -68,14 +68,14 @@ public interface SpamBot {
 	/**
 	* Returns all the links successfully followed
 	*/
-	Set<String> getSuccesses();
+	Set<String> getSuccessfulLinks();
 
 	/**
 	* Adds set of links successfully followed to existing set of links successfully followed
 	* 
 	* @param set of links to add 
 	*/
-	void addSuccesses(Set<String> link);
+	void addSuccessfulLinks(Set<String> link);
 
 
 }

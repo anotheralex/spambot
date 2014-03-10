@@ -21,7 +21,7 @@ public class Crawler implements Runnable {
 			spamBot.addLinks(fetchedLinks);
 			Set<String> fetchedEmails = wp.getEmails();
 			spamBot.addEmails(fetchedEmails);		
-			spamBot.addSuccesses(url);
+			spamBot.addSuccessfulLinks(url);
 			linksFollowed.incrementAndGet();
 		} catch (MalformedURLException e) {
 			System.out.println("Malformed Url: " + url);
