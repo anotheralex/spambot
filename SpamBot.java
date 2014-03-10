@@ -42,5 +42,40 @@ public interface SpamBot {
 	* have stopped. If it is called before that point, its
 	* behaviour is not defined.
 	*/
-	Set<String> getEMails();
+	Set<String> getEmails();
+
+	/**
+	* Adds set of emails to existing set of emails
+	* 
+	* @param set of emails to add
+	*/
+	void addEmails(Set<String> emails);
+
+	/**
+	* Retrieves a link and removes it from the list of links to visit.
+	*
+	* @return link
+	*/
+	String getAndRemoveLink();
+
+	/**
+	* Adds set of links to existing set of links
+	* 
+	* @param set of links to add 
+	*/
+	void addLinks(Set<String> links);
+
+	/**
+	* Returns all the links successfully followed
+	*/
+	Set<String> getSuccesses();
+
+	/**
+	* Adds set of links successfully followed to existing set of links successfully followed
+	* 
+	* @param set of links to add 
+	*/
+	void addSuccesses(Set<String> link);
+
+
 }

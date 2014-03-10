@@ -1,4 +1,6 @@
-
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.new.MalformedURLException;
 
 public class Crawler implements Runnable {
 
@@ -21,7 +23,7 @@ public class Crawler implements Runnable {
 			spamBot.addEmails(fetchedEmails);		
 			spamBot.addSuccesses(url);
 			linksFollowed.incrementAndGet();
-		} catch (MalformedUrlException e) {
+		} catch (MalformedURLException e) {
 			System.out.println("Malformed Url: " + url);
 		}
 		run();
