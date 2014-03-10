@@ -9,6 +9,7 @@ public class WebPageImplTest {
 
 	@Before
 	public void setup() {
+		//strurl = "http://www.morleycollege.ac.uk/staff_email";
 		strurl = "http://www.oracle.com/index.html";
 		try {
 			wp = new WebPageImpl(strurl);
@@ -23,5 +24,7 @@ public class WebPageImplTest {
 		String actual = wp.getUrl();
 		assertEquals(expected, actual);
 	}
+
+
 
 }
