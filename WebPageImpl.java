@@ -12,8 +12,10 @@ import java.util.regex.Pattern;
 */
 public class WebPageImpl implements WebPage {
 
-	private static final Pattern linkPattern = Pattern.compile("\\<a href\\=\"()\".*");
-	private static final Pattern emailPattern = Pattern.compile("([\\w\\.\\-_]+@[\\w\\.\\-_]\\.[A-Za-z])[ \"]");
+	private static final Pattern linkPattern = Pattern.compile("\\b(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]");
+	//private static final Pattern linkPattern = Pattern.compile("\\<a href\\=\"()\".*");
+	private static final Pattern emailPattern = Pattern.compile("\\b[A-Z0-9._%-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b", Pattern.CASE_INSENSITIVE);
+	//private static final Pattern emailPattern = Pattern.compile("([\\w\\.\\-_]+@[\\w\\.\\-_]\\.[A-Za-z])[ \"]");
 	private String urlstr;
 	private URL url;
 	private Set<String> links = new HashSet<String>();
@@ -90,10 +92,12 @@ public class WebPageImpl implements WebPage {
 			while ((inputLine = in.readLine()) != null) {
 				Matcher linkMatcher = linkPattern.matcher(inputLine);
 				while (linkMatcher.find()) {
+					//System.out.println(linkMatcher.group());
 					links.add(linkMatcher.group());
 				}
 				Matcher emailMatcher = emailPattern.matcher(inputLine);
 				while (emailMatcher.find()) {
+					//System.out.println(emailMatcher.group());
 					emails.add(emailMatcher.group());
 				}
 			}
